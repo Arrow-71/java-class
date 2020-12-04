@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+class show {
+    public static void main(String[] args){
+        work initialization = new work();
+        initialization.initialization();
+
+
+
+    }
+}
+
+class work{
+   static final int units_iphones = 100;
+    static final int units_xboxsonex  = 100;
+    static final int units_galaxy = 100;
+   static final double i = 499.99;
+
+    static void initialization(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("what product would you like to enter first? xbox, iphone, or galaxy");
+        String product = scan.next().toLowerCase();
+        if(product.equals("iphone")){
+            iphone();
+        }else if(product.equals("xbox")){
+        xbox();
+        }
+        else if(product.equals("galaxy")){
+
+        }else{
+            System.out.println("this is not an item in inventory");
+        }
+
+    }
+
+    static void iphone(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("how many iphones were sold this month? ");
+        int number_of_iphones = scan.nextInt();
+        double total_iphone = i *  number_of_iphones;
+        int count = units_iphones - number_of_iphones;
+        if(total_iphone<1000){
+            System.out.print("only "+number_of_iphones+" were sold this month; this only added up to $"+total_iphone +
+                    " consider liquidating the product. There are currently "+count+" iphones left" );
+        }else if(total_iphone>1000 && total_iphone < 10000){
+            System.out.print(number_of_iphones+" iphones were sold this month; this added up to $"+total_iphone +
+                    " consider reducing the price or renegotating the whole sale price.There are currently "+count+" iphones left");
+        }else {
+            System.out.print(number_of_iphones+" iphones were sold this month; this added up to $"+total_iphone +
+                    " keep everything about this product the same. There are currently "+count+" iphones left consder ordering more stock");
+        }
+    }
+
+    static void xbox(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("how many xboxs were sold this month? ");
+        int number_of_xboxs = scan.nextInt();
+        double total_xboxs = i *  number_of_xboxs;
+        int count = units_iphones - number_of_xboxs;
+        if(total_xboxs<1000){
+            System.out.print("only "+number_of_xboxs+" were sold this month; this only added up to $"+total_xboxs +
+                    " consider liquidating the product. There are currently "+count+" xboxs left" );
+        }else if(total_xboxs>1000 && total_xboxs < 10000){
+            System.out.print(number_of_xboxs+" xboxs were sold this month; this added up to $"+total_xboxs +
+                    " consider reducing the price or renegotating the whole sale price.There are currently "+count+" xboxs left");
+        }else {
+            System.out.print(number_of_xboxs+" xboxs were sold this month; this added up to $"+total_xboxs +
+                    " keep everything about this product the same. There are currently "+count+" xboxs left consder ordering more stock");
+        }
+    }
+static void galaxy(){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("how many galaxys were sold this month? ");
+    int number_of_galaxy = scan.nextInt();
+    double total_galaxy = i *  number_of_galaxy;
+    int count = units_iphones - number_of_galaxy;
+    if(total_galaxy<1000){
+        System.out.print("only "+number_of_galaxy+" were sold this month; this only added up to $"+total_galaxy +
+                " consider liquidating the product. There are currently "+count+" galaxys left" );
+    }else if(total_galaxy>1000 && total_galaxy < 10000){
+        System.out.print(number_of_galaxy+" galaxys were sold this month; this added up to $"+total_galaxy +
+                " consider reducing the price or renegotating the whole sale price.There are currently "+count+" galaxys left");
+    }else {
+        System.out.print(number_of_galaxy+" galaxys were sold this month; this added up to $"+total_galaxy +
+                " keep everything about this product the same. There are currently "+count+" galaxys left consder ordering more stock");
+    }
+}
+
+}

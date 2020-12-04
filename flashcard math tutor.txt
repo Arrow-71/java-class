@@ -1,0 +1,33 @@
+import java.util.Random;
+import java.util.Scanner;
+class flashcard {
+    public static void main(String[] args) {
+        System.out.println("Welcome to flashcard practice \nthis program was created to aid you with math practice");
+            Random random = new Random();
+            int one = random.nextInt(100);
+            int two = random.nextInt(100);
+            int three = one+1;
+            int four = two+1;
+            int answer = four + three;
+
+            System.out.print(three + " + ");
+        System.out.print(four+" ");
+        int response = three + four;
+        Scanner in = new Scanner(System.in);
+        int correct = in.nextInt();
+        if(answer == correct){
+            System.out.println("your answer of " + correct + " is correct"+"\nGoodbye");
+
+        }else{
+            System.out.println("your answer of "+correct+ " is incorrect. Check your addition"+"\nGoodbye");
+
+        }
+
+
+
+
+
+
+
+    }
+}

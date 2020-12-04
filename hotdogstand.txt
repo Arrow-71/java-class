@@ -1,0 +1,34 @@
+    public static void id(){
+   // genId = Math.random()*1000000;
+     //   System.out.println(Math.round(genId));
+
+    }
+    public HotDogStand(String hName){
+        this.standName = hName;
+        this.hotDogsSold = 0;
+        this.idNumber = genId;
+        genId++;
+
+    }
+
+    public String getName(){
+        return this.standName;
+    }
+
+    public void justSold(){
+        this.hotDogsSold++;
+        numHotdogs++;
+    }
+    public void justSold(int sold2){
+        sold2 = 5;
+        numHotdogs += sold2;
+    }
+    public int getIdNumber(){
+        return this.idNumber;
+    }
+    public int getHotDogsSold(){
+        return this.hotDogsSold;
+    }
+
+
+}

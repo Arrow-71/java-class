@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("please enter the total loan");
+        double a = scan.nextDouble();//loan amount
+        System.out.println("please enter the total amount of payments");
+        double n = scan.nextDouble();// number of payments
+        System.out.println("please enter the annual interest rate");
+        double i = scan.nextDouble() / 1200;//interest
+        double d = ((Math.pow(1 + i, n) - 1) / (i * (Math.pow(1 + i, n))));
+        double p = a / d;
+
+        System.out.println("this will be your monthly payment " + String.format("%.2f", p));
+        double total_paid = p * n;
+
+        System.out.println("this is your total paid amount " + String.format("%.2f", total_paid));
+        System.out.println("your amoritization schedule");
+        System.out.println("payment#\t interest\t principal\t balance");
+        double first = a*i*12*1/12;
+        double firstPrincipal = p - first;
+        double firstBalance = a - firstPrincipal;
+        System.out.print("1\t          " + String.format("%.2f",first ));
+        System.out.print("\t      "+String.format("%.2f",firstPrincipal));
+        System.out.println("\t   "+String.format("%.2f",firstBalance));
+        for(int k = 1;k < n; k++) {
+            double payedOff = a - p;
+            double interest = payedOff * i * 12 * 1 / 12;
+            double principal = p-interest;
+            double balance = a - principal;
+            System.out.print(k+1);
+            System.out.print("\t         " + String.format("%.2f", interest));
+            System.out.print("        "+String.format("%.2f",principal));
+            System.out.println("       "+String.format("%.2f",balance));
+            a=payedOff;
+
+        }
+
+
+    }
+
+}

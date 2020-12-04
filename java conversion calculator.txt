@@ -1,0 +1,15 @@
+import  java.util.Scanner;
+class conversioncalculator {
+    public static void main(String[] args) {
+        Scanner calc = new Scanner(System.in);
+        System.out.println("welcome to the java conversion calculator");
+        System.out.println("this program converts feet to meters");
+        System.out.println("enter your number of feet");
+        double conversion = calc.nextDouble();
+        System.out.println("you entered "+ conversion +" feet");
+        double out = conversion/3.2808;
+        System.out.println("your conversion is "+ out +" meters");
+        System.out.println("Thank you for using the Java Conversion Calculator!!!!!!!" + "\nGoodbye");
+
+    }
+}
